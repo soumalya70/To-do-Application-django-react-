@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html {
+  background-color: rgba(41,49,63,255);
+  height: 100vh;
+  width: 100wh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.App {
+  background-color: rgba(255,255,255,255);
+  padding: 40px 30px 0 30px;
+  width: 550px;
+  height: 600px;
+  border-radius: 30px;
+}
+/* .container1 {
+  background-color: yellow;
+} */
+.todo-heading {
+  color: rgba(0,39,101,255);
+}
+.todo-action {
+  display: flex;
+  margin-top: 20px;
+  background-color: rgba(255,103,57,255);
+  border-radius: 50px;
+  border: none;
+}
+.todo-input {
+  display: flex;
+  flex: 80%;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  width: 250px;
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+}
+.task-input {
+  flex: 70%;
+  background-color: rgba(237,238,240,255);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  padding-left: 33px;
+  width: 100%;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+}
+.todo-input > .task-time {
+  flex: 30%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  border-radius: 0 50px 50px 0;
+}
+.task-time-hr {
+  background-color: rgba(237,238,240,255);;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  /* border-left: 0.5px solid rgba(255,103,57,255);
+  border-right: 0.5px solid rgba(255,103,57,255); */
+}
+.task-time-min {
+  background-color: rgba(237,238,240,255);
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0 50px 50px 0; 
+  outline: none;
+}
+input:focus {
+  background-color: darkgrey;
+  border: none;
+}
+.todo-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,255);
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  flex: 20%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 50px 50px 0;
+}
+@keyframes pressed {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+.todo-add.pressed {
+  animation: pressed 0.1s linear;
 }
 
-.App-link {
-  color: #61dafb;
+/* Component 2 */
+.todoitems{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0px;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoitems-container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.todoitems-text{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  color: #404040;
+  font-size: 18px;
+  width: 100%;
+}
+.todoitems-text_time {
+  padding-right: 50px;
+}
+.todoitems-cross-icon{
+  cursor: pointer;
+  padding-right: 25px;
+}
+.line-through {
+  text-decoration: line-through solid #ADADAD 3px;
 }
