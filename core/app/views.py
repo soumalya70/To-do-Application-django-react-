@@ -2,8 +2,13 @@ from django.shortcuts import redirect, render
 from .models import *
 from django.contrib import messages
 from .forms import *
+from rest_framework import viewsets
+from .serializers import TodoSerializer
 # Create your views here.
 
+
+def home(request):
+    return render(request,"index.html")
 def tasks(request):
     context={'tasks':Todolist.objects.all()}
     return render(request,'task.html',context)
