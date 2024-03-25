@@ -1,5 +1,6 @@
 import Component2 from './Component2';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 let count = 0;
 export default function Component1() {
@@ -31,12 +32,20 @@ export default function Component1() {
     useEffect(() => {
         setTimeout(() => {
             console.log(todos);
-            localStorage.setItem("todos",JSON.stringify(todos));
+            axios.post("http://localhost:8000/tasks", todos)
+            // localStorage.setItem("todos",JSON.stringify(todos));
         }, 100)
     }, [todos]);
 
     useEffect(()=>{
-        setTodos(JSON.parse(localStorage.getItem("todos")));
+        const apiobj = axios.get("http://localhost:8000/tasks");
+        apiobj.then(response => {
+            const apidata = response.data;
+            setTodos(apidata);
+            console.log(apidata);
+        }).catch(error => {
+            console.error('API Error:', error); // Handle any errors that occur during the request
+        });
         count = localStorage.getItem("todos_count");
     },[]);
 
