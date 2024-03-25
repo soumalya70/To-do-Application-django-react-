@@ -8,6 +8,6 @@ class MyForm(forms.ModelForm):
     class Meta:
         model=Todolist
         timing = forms.TimeField(widget=TimeWithoutAMPMInput())
-        fields=['timing']
+        fields=['activity_name','timing','status']
     
 
